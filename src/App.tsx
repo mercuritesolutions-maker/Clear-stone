@@ -62,7 +62,7 @@ const About = () => {
             <p className="text-slate-500 mb-0 font-medium italic">
               "We treat every driveway and patio as if it were our own. That's why we have so many repeat customers and local recommendations."
               <br />
-              <span className="text-brand-deep font-display font-bold not-italic block mt-4">— Mark Stevens, Founder</span>
+              <span className="text-brand-deep font-display font-bold not-italic block mt-4">— Ryan Scarborough, Founder</span>
             </p>
           </motion.div>
         </div>
