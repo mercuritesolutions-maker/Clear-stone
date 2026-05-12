@@ -45,7 +45,7 @@ export const Contact = () => {
               {[
                 { icon: <Phone className="w-6 h-6" />, label: 'Call or WhatsApp', value: '07000 000000' },
                 { icon: <Mail className="w-6 h-6" />, label: 'Email Us', value: 'hello@clearstonecleaning.co.uk' },
-                { icon: <MapPin className="w-6 h-6" />, label: 'Service Areas', value: 'Serving Bristol, Bath & South Wales' }
+                { icon: <MapPin className="w-6 h-6" />, label: 'Service Areas', value: 'Serving Hucknall & Surrounding Areas' }
               ].map((item, idx) => (
                 <div key={idx} className="flex gap-6">
                   <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-brand-accent shrink-0 border border-slate-100">
@@ -181,11 +181,10 @@ export const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-6">Service Areas</h4>
             <ul className="space-y-3 text-slate-400 font-medium">
-              <li>Bristol & Suburbs</li>
-              <li>Bath City Centre</li>
-              <li>South Gloucestershire</li>
-              <li>Somerset Districts</li>
-              <li>South Wales Border</li>
+              <li>Hucknall</li>
+              <li>Linby & Papplewick</li>
+              <li>Nottinghamshire</li>
+              <li>Surrounding Areas</li>
             </ul>
           </div>
 

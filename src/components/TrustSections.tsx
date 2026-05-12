@@ -63,23 +63,23 @@ export const TrustSections = () => {
             {[
               {
                 before: "https://images.unsplash.com/photo-1590483734731-50e50f3844da?auto=format&fit=crop&q=80&w=800",
-                after: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&q=80&w=800",
+                after: "https://images.unsplash.com/photo-1621905252509-b45091724738?auto=format&fit=crop&q=80&w=800",
                 label: "Driveway Restoration"
               },
               {
                 before: "https://images.unsplash.com/photo-1541818138-ef8634e9e0cb?auto=format&fit=crop&q=80&w=800",
-                after: "https://images.unsplash.com/photo-1621905252509-b45091724738?auto=format&fit=crop&q=80&w=800",
-                label: "Patio Deep Clean"
+                after: "https://images.unsplash.com/photo-1516528387618-afa90b13e000?auto=format&fit=crop&q=80&w=800",
+                label: "Sandstone Patio Deep Clean"
               },
               {
                 before: "https://images.unsplash.com/photo-1595428707305-654db52f5341?auto=format&fit=crop&q=80&w=800",
-                after: "https://images.unsplash.com/photo-1617196034183-421b4917c92d?auto=format&fit=crop&q=80&w=800",
-                label: "Pathway Recovery"
+                after: "https://images.unsplash.com/photo-1558223931-9705503b2236?auto=format&fit=crop&q=80&w=800",
+                label: "Stone Pathway Recovery"
               },
               {
                 before: "https://images.unsplash.com/photo-1632759162353-19494191a357?auto=format&fit=crop&q=80&w=800",
-                after: "https://images.unsplash.com/photo-1521741165449-342817651004?auto=format&fit=crop&q=80&w=800",
-                label: "Decking Refresh"
+                after: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800",
+                label: "Commercial Surface Refresh"
               }
             ].map((item, idx) => (
               <motion.div 

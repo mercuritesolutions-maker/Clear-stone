@@ -47,14 +47,14 @@ export const Services = () => {
             viewport={{ once: true }}
           >
             <span className="text-brand-accent font-bold tracking-widest uppercase text-sm mb-4 block">Our Expertise</span>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-brand-deep mb-6">
-              Expert Cleaning Solutions <br /> For Every Surface
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-brand-deep mb-6 text-balance">
+               Professional Cleaning Solutions <br /> For Every Surface
             </h2>
             <div className="w-20 h-1.5 bg-brand-accent mx-auto rounded-full" />
           </motion.div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -62,42 +62,57 @@ export const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white p-10 rounded-[2.5rem] shadow-xl shadow-slate-200/50 border border-slate-100 hover:border-brand-accent/30 transition-all hover:-translate-y-2 group"
+              className="bg-white p-8 rounded-[2.5rem] shadow-xl shadow-slate-200/50 border border-slate-100 hover:border-brand-accent/30 transition-all hover:-translate-y-2 group"
             >
-              <div className="w-16 h-16 bg-brand-accent/10 rounded-2xl flex items-center justify-center text-brand-accent mb-8 group-hover:bg-brand-accent group-hover:text-white transition-colors duration-300">
+              <div className="w-14 h-14 bg-brand-accent/10 rounded-2xl flex items-center justify-center text-brand-accent mb-6 group-hover:bg-brand-accent group-hover:text-white transition-colors duration-300">
                 {service.icon}
               </div>
-              <h3 className="text-2xl font-display font-bold text-brand-deep mb-4 group-hover:text-brand-accent transition-colors">
+              <h3 className="text-xl font-display font-bold text-brand-deep mb-3 group-hover:text-brand-accent transition-colors">
                 {service.title}
               </h3>
-              <p className="text-slate-600 leading-relaxed mb-8">
+              <p className="text-slate-600 leading-relaxed text-sm">
                 {service.description}
               </p>
-              <button className="flex items-center gap-2 text-brand-deep font-bold hover:gap-4 transition-all">
-                Learn More
-                <ArrowRight className="w-4 h-4 text-brand-accent" />
-              </button>
             </motion.div>
           ))}
-          
-          {/* Custom Quote Card */}
-          <motion.div
-             initial={{ opacity: 0, scale: 0.95 }}
-             whileInView={{ opacity: 1, scale: 1 }}
-             viewport={{ once: true }}
-             className="bg-brand-deep p-10 rounded-[2.5rem] flex flex-col justify-center text-center items-center text-white relative overflow-hidden"
-          >
-            <div className="relative z-10">
-               <h3 className="text-3xl font-display font-bold mb-4 italic">Need something else?</h3>
-               <p className="text-slate-400 mb-8 max-w-[240px]">We offer bespoke cleaning packages for larger properties and commercial clients.</p>
-               <button className="bg-white text-brand-deep px-8 py-4 rounded-2xl font-bold hover:bg-slate-100 transition-colors">
-                 Enquire Now
-               </button>
-            </div>
-            {/* Background Glow */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/20 blur-3xl rounded-full" />
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-blue-500/10 blur-3xl rounded-full" />
-          </motion.div>
+        </div>
+
+        {/* Pricing Guide Section */}
+        <div className="bg-brand-deep rounded-[3rem] p-12 md:p-20 relative overflow-hidden text-center md:text-left">
+           <div className="absolute top-0 right-0 w-96 h-96 bg-brand-accent/10 blur-[100px] rounded-full" />
+           
+           <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <span className="text-brand-accent font-bold tracking-widest uppercase text-sm mb-4 block">Fair & Transparent</span>
+                <h2 className="text-4xl font-display font-bold text-white mb-6">CLEARSTONE Price Guide</h2>
+                <p className="text-slate-400 text-lg mb-8 max-w-md">Professional finishing for every budget. Every clean includes our signature deep-wash process and surface protection.</p>
+                <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+                   <div className="bg-white/5 border border-white/10 px-6 py-3 rounded-xl text-white font-bold">Driveways</div>
+                   <div className="bg-white/5 border border-white/10 px-6 py-3 rounded-xl text-white font-bold">Patios</div>
+                   <div className="bg-white/5 border border-white/10 px-6 py-3 rounded-xl text-white font-bold">Paths</div>
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-3 gap-6">
+                 {[
+                   { label: 'Small Areas', price: '£25' },
+                   { label: 'Medium Areas', price: '£50' },
+                   { label: 'Large Areas', price: '£75' }
+                 ].map((tier, i) => (
+                   <motion.div 
+                    key={i}
+                    whileHover={{ scale: 1.05 }}
+                    className="bg-white p-8 rounded-3xl text-center shadow-2xl"
+                   >
+                     <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-2">{tier.label}</p>
+                     <p className="text-slate-500 text-sm mb-1 italic">From</p>
+                     <p className="text-4xl font-display font-bold text-brand-deep mb-4">{tier.price}</p>
+                     <div className="w-full h-[1px] bg-slate-100 mb-4" />
+                     <button className="text-brand-accent font-bold text-xs uppercase tracking-tighter">Book Quote</button>
+                   </motion.div>
+                 ))}
+              </div>
+           </div>
         </div>
       </div>
     </section>

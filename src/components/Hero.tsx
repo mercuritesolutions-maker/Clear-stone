@@ -8,8 +8,8 @@ export const Hero = () => {
       {/* Background Image / Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&q=80&w=2000"
-          alt="Professional Driveway Cleaning"
+          src="https://images.unsplash.com/photo-1632759162353-19494191a357?auto=format&fit=crop&q=90&w=2000"
+          alt="Professional Power Washing"
           className="w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-linear-to-r from-brand-deep via-brand-deep/80 to-transparent" />
@@ -29,25 +29,25 @@ export const Hero = () => {
               ))}
             </div>
             <span className="text-white/80 text-sm font-medium tracking-wide uppercase">
-              5-Star Rated Service in [City]
+              5-Star Rated Service in Hucknall & Surrounds
             </span>
           </div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-extrabold text-white leading-tight mb-6">
             Your Property, <br />
-            <span className="text-brand-accent">Spotless.</span>
+            <span className="text-brand-accent italic">Spotless.</span>
           </h1>
           
           <p className="text-xl text-slate-300 mb-10 max-w-lg leading-relaxed">
-            Premium driveway, patio, and exterior cleaning for homeowners who demand the best results. Professional jet washing specialists.
+            Premium driveway, patio, and exterior cleaning for homeowners who demand the best results. Professional jet washing specialists using industrial grade equipment.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-brand-accent hover:bg-brand-accent/90 text-white px-8 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 transition-all hover:scale-105 shadow-xl shadow-brand-accent/20">
+            <button className="bg-brand-accent hover:bg-brand-accent/90 text-white px-8 py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 transition-all hover:scale-105 shadow-xl shadow-brand-accent/20 cursor-pointer">
               Get a Free Quote
               <ChevronRight className="w-5 h-5" />
             </button>
-            <button className="border-2 border-white/20 hover:border-white/40 text-white px-8 py-5 rounded-2xl font-bold text-lg flex items-center justify-center transition-all bg-white/5 backdrop-blur-sm">
+            <button className="border-2 border-white/20 hover:border-white/40 text-white px-8 py-5 rounded-2xl font-bold text-lg flex items-center justify-center transition-all bg-white/5 backdrop-blur-sm cursor-pointer">
               Our Services
             </button>
           </div>
@@ -62,8 +62,8 @@ export const Hero = () => {
               <div className="text-slate-400 text-sm">Satisfaction</div>
             </div>
             <div>
-              <div className="text-3xl font-display font-bold text-white mb-1">24h</div>
-              <div className="text-slate-400 text-sm">Quote Turnaround</div>
+              <div className="text-3xl font-display font-bold text-white mb-1">FREE</div>
+              <div className="text-slate-400 text-sm">Site Survey</div>
             </div>
           </div>
         </motion.div>
@@ -77,14 +77,14 @@ export const Hero = () => {
         >
           <div className="aspect-square rounded-[3rem] overflow-hidden border-8 border-white/10 shadow-2xl relative">
              <img 
-              src="https://images.unsplash.com/photo-1621905252509-b45091724738?auto=format&fit=crop&q=80&w=800" 
-              alt="Impeccable Patio" 
+              src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800" 
+              alt="Clean Patio Detail" 
               className="w-full h-full object-cover"
              />
              <div className="absolute inset-0 bg-linear-to-t from-brand-deep/60 to-transparent" />
-             <div className="absolute bottom-10 left-10 p-6 bg-white/90 backdrop-blur-md rounded-2xl shadow-xl max-w-[240px]">
-                <p className="text-brand-deep font-bold italic mb-2">"Transformed my driveway in just one morning. Incredible service!"</p>
-                <p className="text-slate-500 text-sm font-medium">— Sarah M., Local Resident</p>
+             <div className="absolute bottom-10 left-10 p-6 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl max-w-[240px]">
+                <p className="text-brand-deep font-bold italic mb-2 text-lg">"Transformed my driveway in just one morning. Incredible service!"</p>
+                <p className="text-slate-500 text-sm font-medium">— Sarah M., Bristol Resident</p>
              </div>
           </div>
           {/* Decorative element */}
