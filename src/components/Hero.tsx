@@ -40,30 +40,31 @@ export const Hero = () => {
             </span>
           </div>
 
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-display font-extrabold text-white leading-[0.9] mb-8">
-            Your Property, <br />
+          <h1 className="text-6-xl md:text-8xl lg:text-[10rem] font-display font-black text-white leading-[0.85] tracking-tighter mb-8">
+            Superior <br />
             <span className="text-brand-accent italic relative">
-              Spotless.
+              Cleaning.
               <motion.span 
                 initial={{ width: 0 }}
                 animate={{ width: '100%' }}
-                transition={{ delay: 1, duration: 1 }}
-                className="absolute -bottom-2 left-0 h-2 bg-brand-accent/30 rounded-full"
+                transition={{ delay: 1, duration: 1.2, ease: "circOut" }}
+                className="absolute -bottom-4 left-0 h-3 bg-brand-accent/20 rounded-full blur-[2px]"
               />
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-xl leading-relaxed font-medium">
-            Premium driveway, patio, and jet washing specialists. We restore your home's kerb appeal with professional-grade precision.
+          <p className="text-xl md:text-3xl text-slate-300 mb-12 max-w-xl leading-snug font-medium tracking-tight">
+            The premium exterior restoration specialist for Hucknall's finest homes. Industrial-grade results, residential care.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6">
-            <button className="bg-brand-accent hover:bg-brand-accent/90 text-white px-10 py-6 rounded-2xl font-black text-xl flex items-center justify-center gap-3 transition-all hover:scale-105 shadow-2xl shadow-brand-accent/40 active:scale-95 cursor-pointer">
-              Get Your Free Quote
-              <ChevronRight className="w-6 h-6" />
+            <button className="group relative bg-brand-accent hover:bg-brand-accent/90 text-white px-12 py-7 rounded-[2rem] font-black text-2xl flex items-center justify-center gap-3 transition-all hover:scale-105 shadow-[0_20px_50px_rgba(59,130,246,0.4)] active:scale-95 cursor-pointer overflow-hidden">
+              <span className="relative z-10 transition-transform group-hover:-translate-x-1">Get Your Free Quote</span>
+              <ChevronRight className="w-8 h-8 relative z-10 transition-transform group-hover:translate-x-1" />
+              <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
             </button>
-            <button className="border-2 border-white/10 hover:border-white/30 text-white px-10 py-6 rounded-2xl font-bold text-xl flex items-center justify-center transition-all bg-white/5 backdrop-blur-md hover:bg-white/10 cursor-pointer">
-              View Our Work
+            <button className="group border-2 border-white/10 hover:border-white/30 text-white px-12 py-7 rounded-[2rem] font-bold text-2xl flex items-center justify-center transition-all bg-white/5 backdrop-blur-xl hover:bg-white/10 cursor-pointer">
+              Our Process
             </button>
           </div>
 

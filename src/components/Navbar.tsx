@@ -30,43 +30,46 @@ export const Navbar = () => {
   return (
     <nav
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4',
-        isScrolled ? 'bg-white/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent'
+        'fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-700 w-[95%] max-w-7xl rounded-[2.5rem] border border-white/10 px-8 py-5',
+        isScrolled 
+          ? 'bg-white/80 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-slate-100 py-4 top-4' 
+          : 'bg-white/5 backdrop-blur-md py-6'
       )}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-brand-accent rounded-lg flex items-center justify-center">
-            <span className="text-white font-display font-extrabold text-xl italic">C</span>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3 group cursor-pointer">
+          <div className="w-12 h-12 bg-brand-accent rounded-2xl flex items-center justify-center shadow-lg shadow-brand-accent/20 group-hover:rotate-12 transition-transform duration-500">
+            <span className="text-white font-display font-black text-2xl italic">C</span>
           </div>
           <span className={cn(
-            "text-2xl font-display font-extrabold tracking-tight",
+            "text-2xl font-display font-black tracking-tighter leading-none transition-colors duration-500",
             isScrolled ? "text-brand-deep" : "text-white"
           )}>
-            CLEAR<span className="text-brand-accent">STONE</span>
+            CLEAR<span className="text-brand-accent">STONE.</span>
           </span>
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-10">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-brand-accent",
-                isScrolled ? "text-slate-600" : "text-white/90"
+                "text-xs font-black uppercase tracking-[0.2em] transition-all hover:text-brand-accent relative group/link",
+                isScrolled ? "text-slate-500" : "text-white/80"
               )}
             >
               {item.label}
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-brand-accent transition-all group-hover/link:w-full" />
             </a>
           ))}
           <a
             href="tel:07000000000"
-            className="flex items-center gap-2 bg-brand-accent hover:bg-brand-accent/90 text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 active:scale-95 shadow-lg shadow-brand-accent/20"
+            className="flex items-center gap-3 bg-brand-accent hover:bg-brand-accent/90 text-white px-8 py-4 rounded-2xl text-xs font-black uppercase tracking-widest transition-all hover:scale-105 active:scale-95 shadow-[0_15px_30px_rgba(59,130,246,0.3)]"
           >
             <Phone className="w-4 h-4" />
-            07000 000000
+            Book Quotes
           </a>
         </div>
 

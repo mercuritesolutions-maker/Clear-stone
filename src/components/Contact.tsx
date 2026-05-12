@@ -27,134 +27,139 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-32 bg-white">
+    <section id="contact" className="py-40 bg-white">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-20">
+        <div className="grid lg:grid-cols-2 gap-32">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 1 }}
           >
-            <span className="text-brand-accent font-bold tracking-widest uppercase text-sm mb-4 block">Get In Touch</span>
-            <h2 className="text-5xl font-display font-bold text-brand-deep mb-8 leading-tight">Ready to see <br /> the transformation?</h2>
-            <p className="text-xl text-slate-500 mb-12 leading-relaxed max-w-lg">
-              Fill out the form below or give us a call. We usually respond to all quote requests within 24 hours.
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-12 h-[1px] bg-brand-accent" />
+              <span className="text-brand-accent font-black tracking-[0.3em] uppercase text-xs">Direct Channel</span>
+            </div>
+            
+            <h2 className="text-6xl md:text-8xl font-display font-black text-brand-deep mb-10 tracking-tighter leading-none">
+              Initiate <br />
+              <span className="text-slate-400 italic font-medium">Transformation.</span>
+            </h2>
+            
+            <p className="text-2xl text-slate-500 mb-16 leading-snug max-w-lg font-medium tracking-tight">
+              Ready to restore your property's original character? Reach out for a specialized consultation.
             </p>
 
-            <div className="space-y-8">
+            <div className="space-y-12">
               {[
-                { icon: <Phone className="w-6 h-6" />, label: 'Call or WhatsApp', value: '07000 000000' },
-                { icon: <Mail className="w-6 h-6" />, label: 'Email Us', value: 'hello@clearstonecleaning.co.uk' },
-                { icon: <MapPin className="w-6 h-6" />, label: 'Service Areas', value: 'Serving Hucknall & Surrounding Areas' }
+                { icon: <Phone className="w-8 h-8" />, label: 'Call HQ', value: '07000 000000' },
+                { icon: <Mail className="w-8 h-8" />, label: 'Email', value: 'hello@clearstonecleaning.co.uk' },
+                { icon: <MapPin className="w-8 h-8" />, label: 'Hucknall Base', value: 'Serving Hucknall & Surrounds' }
               ].map((item, idx) => (
-                <div key={idx} className="flex gap-6">
-                  <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center text-brand-accent shrink-0 border border-slate-100">
+                <div key={idx} className="flex gap-8 group">
+                  <div className="w-20 h-20 bg-slate-50 rounded-[2rem] flex items-center justify-center text-brand-deep shrink-0 border border-slate-100 group-hover:bg-brand-accent group-hover:text-white transition-all duration-500 shadow-inner group-hover:rotate-6">
                     {item.icon}
                   </div>
-                  <div>
-                    <h4 className="text-slate-400 text-sm font-bold uppercase tracking-wider mb-1">{item.label}</h4>
-                    <p className="text-xl font-bold text-brand-deep">{item.value}</p>
+                  <div className="flex flex-col justify-center">
+                    <h4 className="text-slate-400 text-xs font-black uppercase tracking-[0.2em] mb-2">{item.label}</h4>
+                    <p className="text-2xl font-black text-brand-deep leading-none">{item.value}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-16 flex gap-4">
-               <a href="#" className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-brand-deep hover:bg-brand-accent hover:text-white transition-all">
-                 <Facebook className="w-5 h-5" />
-               </a>
-               <a href="#" className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-brand-deep hover:bg-brand-accent hover:text-white transition-all">
-                 <Instagram className="w-5 h-5" />
-               </a>
+            <div className="mt-20 flex gap-6">
+               {[Facebook, Instagram].map((Icon, i) => (
+                 <a key={i} href="#" className="w-14 h-14 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center text-brand-deep hover:bg-brand-accent hover:text-white transition-all shadow-sm hover:shadow-xl hover:-translate-y-1">
+                   <Icon className="w-6 h-6" />
+                 </a>
+               ))}
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-slate-50 p-10 md:p-12 rounded-[3rem] border border-slate-100 shadow-2xl shadow-slate-200/50"
+            transition={{ duration: 1 }}
+            className="bg-slate-50/50 p-12 md:p-20 rounded-[4rem] border border-slate-100 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.05)] backdrop-blur-3xl"
           >
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-500 uppercase ml-2">Your Name</label>
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                  <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-4">Full Name</label>
                   <input
                     {...register('name')}
-                    placeholder="John Doe"
+                    placeholder="Enter your name"
                     className={cn(
-                      "w-full bg-white px-6 py-4 rounded-2xl border-2 border-transparent transition-all outline-none",
-                      errors.name ? "border-red-400" : "focus:border-brand-accent shadow-sm focus:shadow-brand-accent/10"
+                      "w-full bg-white px-8 py-5 rounded-2xl border-2 border-transparent transition-all outline-none font-bold text-brand-deep",
+                      errors.name ? "border-red-400" : "focus:border-brand-accent shadow-xl shadow-black/[0.02] focus:shadow-brand-accent/5"
                     )}
                   />
-                  {errors.name && <p className="text-red-500 text-xs ml-2 uppercase font-bold">{errors.name.message}</p>}
                 </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-slate-500 uppercase ml-2">Phone Number</label>
+                <div className="space-y-3">
+                  <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-4">Mobile</label>
                   <input
                     {...register('phone')}
-                    placeholder="07xxx xxxxxx"
+                    placeholder="UK Contact"
                     className={cn(
-                      "w-full bg-white px-6 py-4 rounded-2xl border-2 border-transparent transition-all outline-none",
-                      errors.phone ? "border-red-400" : "focus:border-brand-accent shadow-sm focus:shadow-brand-accent/10"
+                      "w-full bg-white px-8 py-5 rounded-2xl border-2 border-transparent transition-all outline-none font-bold text-brand-deep",
+                      errors.phone ? "border-red-400" : "focus:border-brand-accent shadow-xl shadow-black/[0.02] focus:shadow-brand-accent/5"
                     )}
                   />
-                  {errors.phone && <p className="text-red-500 text-xs ml-2 uppercase font-bold">{errors.phone.message}</p>}
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-500 uppercase ml-2">Email Address</label>
+              <div className="space-y-3">
+                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-4">Email Channel</label>
                 <input
                   {...register('email')}
-                  placeholder="john@example.com"
+                  placeholder="Primary address"
                   className={cn(
-                    "w-full bg-white px-6 py-4 rounded-2xl border-2 border-transparent transition-all outline-none",
-                    errors.email ? "border-red-400" : "focus:border-brand-accent shadow-sm focus:shadow-brand-accent/10"
+                    "w-full bg-white px-8 py-5 rounded-2xl border-2 border-transparent transition-all outline-none font-bold text-brand-deep",
+                    errors.email ? "border-red-400" : "focus:border-brand-accent shadow-xl shadow-black/[0.02] focus:shadow-brand-accent/5"
                   )}
                 />
-                {errors.email && <p className="text-red-500 text-xs ml-2 uppercase font-bold">{errors.email.message}</p>}
               </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-500 uppercase ml-2">Interested In</label>
+              <div className="space-y-3">
+                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-4">Project Scope</label>
                 <select
                   {...register('service')}
                   className={cn(
-                    "w-full bg-white px-6 py-4 rounded-2xl border-2 border-transparent transition-all outline-none appearance-none cursor-pointer",
-                    errors.service ? "border-red-400" : "focus:border-brand-accent shadow-sm focus:shadow-brand-accent/10"
+                    "w-full bg-white px-8 py-5 rounded-2xl border-2 border-transparent transition-all outline-none appearance-none cursor-pointer font-bold text-brand-deep",
+                    errors.service ? "border-red-400" : "focus:border-brand-accent shadow-xl shadow-black/[0.02] focus:shadow-brand-accent/5"
                   )}
                 >
-                  <option value="">Select a service</option>
-                  <option value="driveway">Driveway Cleaning</option>
-                  <option value="patio">Patio Cleaning</option>
-                  <option value="pathway">Pathway Cleaning</option>
-                  <option value="jet-wash">Specialist Jet Washing</option>
-                  <option value="general">General Exterior Clean</option>
+                  <option value="">Choose Service</option>
+                  <option value="driveway">Driveway Restoration</option>
+                  <option value="patio">Patio Revitalisation</option>
+                  <option value="pathway">Stone Pathway Care</option>
+                  <option value="jet-wash">Master Jet Washing</option>
+                  <option value="general">Estate Maintenance</option>
                 </select>
-                {errors.service && <p className="text-red-500 text-xs ml-2 uppercase font-bold">{errors.service.message}</p>}
               </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-500 uppercase ml-2">Message</label>
+              <div className="space-y-3">
+                <label className="text-[10px] font-black text-slate-400 uppercase tracking-widest ml-4">Notes</label>
                 <textarea
                   {...register('message')}
                   rows={4}
-                  placeholder="Tell us about your project..."
+                  placeholder="Share details about the property..."
                   className={cn(
-                    "w-full bg-white px-6 py-4 rounded-2xl border-2 border-transparent transition-all outline-none resize-none",
-                    errors.message ? "border-red-400" : "focus:border-brand-accent shadow-sm focus:shadow-brand-accent/10"
+                    "w-full bg-white px-8 py-6 rounded-[2.5rem] border-2 border-transparent transition-all outline-none resize-none font-bold text-brand-deep",
+                    errors.message ? "border-red-400" : "focus:border-brand-accent shadow-xl shadow-black/[0.02] focus:shadow-brand-accent/5"
                   )}
                 />
-                {errors.message && <p className="text-red-500 text-xs ml-2 uppercase font-bold">{errors.message.message}</p>}
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-brand-deep text-white py-5 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 hover:bg-slate-800 transition-all active:scale-95 shadow-xl"
+                className="group relative w-full bg-brand-deep text-white py-6 rounded-[2rem] font-black text-xl flex items-center justify-center gap-4 hover:shadow-[0_20px_50px_rgba(15,23,42,0.3)] transition-all duration-500 overflow-hidden active:scale-95"
               >
-                Send Request
-                <Send className="w-5 h-5" />
+                <span className="relative z-10">Send Request</span>
+                <Send className="w-6 h-6 relative z-10 transition-transform group-hover:translate-x-2 group-hover:-translate-y-2" />
+                <div className="absolute inset-0 bg-brand-accent translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
               </button>
             </form>
           </motion.div>
@@ -166,44 +171,51 @@ export const Contact = () => {
 
 export const Footer = () => {
   return (
-    <footer className="bg-brand-deep text-white pt-24 pb-12">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-12 mb-16 pb-16 border-b border-white/10">
-          <div className="col-span-2">
-            <div className="flex items-center gap-2 mb-6 text-3xl font-display font-extrabold tracking-tight">
-              CLEAR<span className="text-brand-accent">STONE</span>
+    <footer className="bg-brand-deep text-white pt-40 pb-20 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[50rem] h-[50rem] bg-brand-accent/5 blur-[150px] rounded-full -translate-y-1/2 translate-x-1/2" />
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid lg:grid-cols-4 gap-24 mb-24 pb-24 border-b border-white/5">
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-4 mb-10 group cursor-pointer">
+              <div className="w-16 h-16 bg-brand-accent rounded-[1.5rem] flex items-center justify-center shadow-2xl shadow-brand-accent/20 group-hover:rotate-12 transition-transform duration-500">
+                <span className="text-white font-display font-black text-3xl italic">C</span>
+              </div>
+              <span className="text-4xl font-display font-black tracking-tighter">
+                CLEAR<span className="text-brand-accent">STONE.</span>
+              </span>
             </div>
-            <p className="text-slate-400 max-w-sm text-lg leading-relaxed">
-              Professional exterior cleaning specialists. We restore the beauty and safety of your property using professional-grade equipment and eco-friendly solutions.
+            <p className="text-slate-400 max-w-md text-2xl leading-snug font-medium tracking-tight">
+              Crafting impeccably clean environments for Hucknall's most distinguished properties. Restoration as an art form.
             </p>
           </div>
           
           <div>
-            <h4 className="font-bold text-lg mb-6">Service Areas</h4>
-            <ul className="space-y-3 text-slate-400 font-medium">
+            <h4 className="font-black uppercase tracking-[0.3em] text-[10px] text-brand-accent mb-10">Operations</h4>
+            <ul className="space-y-6 text-slate-300 font-black text-sm uppercase tracking-widest">
               <li>Hucknall</li>
-              <li>Linby & Papplewick</li>
+              <li>Watnall</li>
               <li>Nottinghamshire</li>
-              <li>Surrounding Areas</li>
+              <li>East Midlands</li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-lg mb-6">Company</h4>
-            <ul className="space-y-3 text-slate-400 font-medium">
-              <li><a href="#" className="hover:text-brand-accent transition-colors">About Us</a></li>
-              <li><a href="#services" className="hover:text-brand-accent transition-colors">Our Services</a></li>
-              <li><a href="#gallery" className="hover:text-brand-accent transition-colors">Project Gallery</a></li>
-              <li><a href="#contact" className="hover:text-brand-accent transition-colors">Get a Quote</a></li>
+            <h4 className="font-black uppercase tracking-[0.3em] text-[10px] text-brand-accent mb-10">Intelligence</h4>
+            <ul className="space-y-6 text-slate-300 font-black text-sm uppercase tracking-widest">
+              <li><a href="#" className="hover:text-brand-accent transition-colors">Vision</a></li>
+              <li><a href="#services" className="hover:text-brand-accent transition-colors">Methods</a></li>
+              <li><a href="#gallery" className="hover:text-brand-accent transition-colors">Archive</a></li>
+              <li><a href="#contact" className="hover:text-brand-accent transition-colors">Connect</a></li>
             </ul>
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-sm font-medium">
-          <p>© {new Date().getFullYear()} Clearstone Exterior Cleaning. All rights reserved.</p>
-          <div className="flex gap-8">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-10 text-slate-500 text-[10px] font-black uppercase tracking-[0.3em]">
+          <p>© {new Date().getFullYear()} Clearstone Collective. Impeccable Standards.</p>
+          <div className="flex gap-12">
+            <a href="#" className="hover:text-white transition-colors">Privacy Logic</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Ops</a>
           </div>
         </div>
       </div>
